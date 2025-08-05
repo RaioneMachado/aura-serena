@@ -1885,3 +1885,345 @@ section {
         right: 20px;
     }
 }
+
+/* Quiz Section - Estilo Premium */
+.chakra-quiz {
+    background: linear-gradient(135deg, #f0f8f5 0%, #e3f3ec 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.chakra-quiz:before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(47, 104, 87, 0.08) 0%, transparent 70%);
+    top: -300px;
+    right: -200px;
+    z-index: 0;
+}
+
+.quiz-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.quiz-header h2 {
+    font-size: 2.8rem;
+    color: #2F6857;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.quiz-header h2 span {
+    position: relative;
+}
+
+.quiz-header h2 span:after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background-color: rgba(47, 104, 87, 0.2);
+    z-index: -1;
+}
+
+.quiz-header .subtitle {
+    font-size: 1.2rem;
+    color: #5a6d65;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(47, 104, 87, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.quiz-progress {
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e0e9e5;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.progress-bar:after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #2F6857, #4a8f7a);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    display: block;
+    text-align: right;
+    color: #7a8d85;
+    font-size: 0.9rem;
+}
+
+.quiz-content {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quiz-question {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.quiz-question.active {
+    display: block;
+}
+
+.quiz-question h3 {
+    font-size: 1.5rem;
+    color: #2F6857;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quiz-option {
+    background: white;
+    border: 2px solid #e0e9e5;
+    border-radius: 12px;
+    padding: 18px 25px;
+    font-size: 1.1rem;
+    color: #3a4a43;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz-option:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: #2F6857;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+}
+
+.quiz-option:hover {
+    border-color: rgba(47, 104, 87, 0.5);
+    transform: translateX(10px);
+}
+
+.quiz-option:hover:before {
+    transform: scaleY(1);
+}
+
+/* Resultado do Quiz */
+.quiz-result {
+    display: none;
+    animation: fadeIn 0.8s ease;
+}
+
+.quiz-result.show {
+    display: block;
+}
+
+.result-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.chakra-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background: #e0e9e5;
+    border-radius: 50%;
+    position: relative;
+}
+
+.chakra-icon:after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+}
+
+/* Cores dos chakras - Versão Corrigida */
+.chakra-icon.root:after { 
+    background: #c0392b; /* Vermelho - Chakra Raiz */
+}
+
+.chakra-icon.sacral:after { 
+    background: #e67e22; /* Laranja - Chakra Sacral */
+}
+
+.chakra-icon.solar:after { 
+    background: #f1c40f; /* Amarelo - Chakra Plexo Solar */
+}
+
+.chakra-icon.heart:after { 
+    background: #2ecc71; /* Verde - Chakra Cardíaco */
+}
+
+.chakra-icon.throat:after { 
+    background: #3498db; /* Azul - Chakra Laríngeo */
+}
+
+.chakra-icon.third-eye:after { 
+    background: #9b59b6; /* Índigo - Chakra Frontal (Terceiro Olho) */
+}
+
+.chakra-icon.crown:after { 
+    background: #8e44ad; /* Violeta - Chakra Coronário */
+}
+
+.chakra-icon.neutral:after {
+    background: linear-gradient(45deg, 
+        #c0392b, #e67e22, #f1c40f, #2ecc71, 
+        #3498db, #9b59b6, #8e44ad); /* Arco-íris - Equilíbrio */
+}
+.result-title {
+    font-size: 1.8rem;
+    color: #2F6857;
+    margin-bottom: 10px;
+}
+
+.result-description {
+    background: rgba(47, 104, 87, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.result-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #3a4a43;
+    margin-bottom: 20px;
+}
+
+.result-recommendation h4 {
+    color: #2F6857;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.result-recommendation ul {
+    list-style-type: none;
+}
+
+.result-recommendation li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.result-recommendation li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2F6857;
+    font-weight: bold;
+}
+
+.result-cta {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.result-cta p {
+    font-size: 1.2rem;
+    color: #3a4a43;
+    margin-bottom: 20px;
+}
+
+.restart-quiz {
+    display: block;
+    margin: 30px auto 0;
+    background: none;
+    border: none;
+    color: #2F6857;
+    font-size: 1rem;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.restart-quiz:hover {
+    color: #1d4a3d;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .quiz-header h2 {
+        font-size: 2rem;
+    }
+    
+    .quiz-container {
+        padding: 30px 20px;
+    }
+    
+    .quiz-question h3 {
+        font-size: 1.3rem;
+    }
+    
+    .quiz-option {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .chakra-quiz {
+        padding: 60px 0;
+    }
+    
+    .quiz-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+}
