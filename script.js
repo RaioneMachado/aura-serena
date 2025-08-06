@@ -437,3 +437,32 @@ document.addEventListener('DOMContentLoaded', function() {
     initQuiz();
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Efeito de carregamento dos posts
+    const posts = document.querySelectorAll('.post-card');
+    
+    posts.forEach((post, index) => {
+        // Delay para animação em cascata
+        post.style.opacity = '0';
+        post.style.transform = 'translateY(20px)';
+        post.style.transition = 'all 0.6s ease-out';
+        
+        setTimeout(() => {
+            post.style.opacity = '1';
+            post.style.transform = 'translateY(0)';
+        }, 200 * index);
+    });
+    
+    // Efeito hover no botão de newsletter
+    const newsletterBtn = document.querySelector('.diario-aura .btn');
+    
+    if(newsletterBtn) {
+        newsletterBtn.addEventListener('mouseenter', function() {
+            this.style.background = 'linear-gradient(135deg, #9E83BC, #7B6193)';
+        });
+        
+        newsletterBtn.addEventListener('mouseleave', function() {
+            this.style.background = 'linear-gradient(135deg, #7B6193, #9E83BC)';
+        });
+    }
+});

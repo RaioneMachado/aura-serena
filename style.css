@@ -2228,3 +2228,234 @@ section {
     }
 }
 
+/* Diário da Aura - Seção de Blog */
+.diario-aura {
+    background: linear-gradient(to bottom, #ffffff 0%, #f9f6fa 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.diario-aura:before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(123, 97, 147, 0.05) 0%, transparent 70%);
+    top: 50%;
+    right: -300px;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.diario-aura h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #7B6193, #9E83BC);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.diario-aura h2:after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #7B6193, #9E83BC);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.posts-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 0;
+}
+
+.post-card {
+    display: flex;
+    margin-bottom: 60px;
+    position: relative;
+    transition: all 0.4s ease;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(123, 97, 147, 0.1);
+}
+
+.post-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(123, 97, 147, 0.15);
+}
+
+.post-number {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #7B6193, #9E83BC);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 30px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(123, 97, 147, 0.3);
+    border: 4px solid white;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.post-card:hover .post-number {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 15px 40px rgba(123, 97, 147, 0.4);
+}
+
+.post-content {
+    padding: 30px 30px 30px 0;
+    flex: 1;
+}
+
+.post-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.post-category {
+    background: rgba(123, 97, 147, 0.1);
+    color: #7B6193;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.post-date {
+    color: #888;
+}
+
+.post-content h3 {
+    font-size: 1.6rem;
+    color: #4A3A5A;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.post-content h3:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: rgba(123, 97, 147, 0.3);
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.post-card:hover .post-content h3:after {
+    width: 80px;
+    background: #7B6193;
+}
+
+.post-content p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.post-card:hover .post-content p {
+    color: #444;
+}
+
+.read-more {
+    color: #7B6193;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.read-more span {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover .read-more {
+    color: #9E83BC;
+}
+
+.post-card:hover .read-more span {
+    transform: translateX(5px);
+}
+
+.post-image {
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s ease;
+}
+
+.post-card:hover .post-image {
+    transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .post-card {
+        flex-direction: column;
+    }
+    
+    .post-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .post-content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin: 20px auto 20px 20px;
+    }
+}
+.diario-aura .btn {
+    background: linear-gradient(135deg, #7B6193, #9E83BC);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(123, 97, 147, 0.3);
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.diario-aura .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(123, 97, 147, 0.4);
+}
