@@ -436,3 +436,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Iniciar quiz quando a página carregar
     initQuiz();
 });
+
